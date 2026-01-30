@@ -196,7 +196,7 @@ return [
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
     'classes_content' => '',
-    'classes_sidebar' => 'sidebar-dark-primary elevation-4',
+    'classes_sidebar' => 'sidebar-light-primary',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
@@ -299,7 +299,18 @@ return [
     */
 
     'menu' => [
-        
+        [
+            'text' => 'Facturas',
+            'url'  => 'facturas',
+            'icon' => 'fas fa-file-invoice',
+        ],
+
+        [
+            'text' => 'Empleados',
+            'url'  => 'empleados',
+            'icon' => 'fas fa-id-card',
+        ],
+
         [
             'text' => 'Clientes',
             'url'  => 'clientes',

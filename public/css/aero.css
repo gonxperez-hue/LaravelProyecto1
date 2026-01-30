@@ -1,0 +1,48 @@
+body {
+    background: linear-gradient(135deg, #a8e0ff, #8ee3f5, #70cad1, #3e517a);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    font-family: "Segoe UI", sans-serif;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.content-wrapper {
+    background: rgba(255, 255, 255, 0.35) !important;
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+.main-sidebar {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.nav-sidebar .nav-link {
+    color: #003366 !important;
+    font-weight: 600;
+}
+
+.nav-sidebar .nav-link.active {
+    background: rgba(255,255,255,0.6) !important;
+    color: #000 !important;
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
