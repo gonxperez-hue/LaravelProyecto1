@@ -9,7 +9,7 @@ class ClienteController extends Controller
 {
     public function index()
     {
-        $clientes = Cliente::all();
+        $clientes = Cliente::orderBy('id', 'asc')->get();
         return view('clientes.index', compact('clientes'));
     }
 
@@ -23,9 +23,17 @@ class ClienteController extends Controller
         $request->validate([
             'nombre' => 'required',
             'email' => 'required|email|unique:clientes',
+            'telefono' => 'nullable',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        Cliente::create($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('foto')) {
+            $data['foto'] = $request->file('foto')->store('clientes', 'public');
+        }
+
+        Cliente::create($data);
 
         return redirect()->route('clientes.index')
             ->with('success', 'Cliente creado correctamente');
@@ -41,9 +49,17 @@ class ClienteController extends Controller
         $request->validate([
             'nombre' => 'required',
             'email' => 'required|email|unique:clientes,email,' . $cliente->id,
+            'telefono' => 'nullable',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        $cliente->update($request->all());
+        $data = $request->all();
+
+        if ($request->hasFile('foto')) {
+            $data['foto'] = $request->file('foto')->store('clientes', 'public');
+        }
+
+        $cliente->update($data);
 
         return redirect()->route('clientes.index')
             ->with('success', 'Cliente actualizado correctamente');
@@ -57,3 +73,4 @@ class ClienteController extends Controller
             ->with('success', 'Cliente eliminado correctamente');
     }
 }
+

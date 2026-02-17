@@ -3,7 +3,6 @@
 
 <head>
 
-    <link rel="stylesheet" href="{{ asset('css/aero.css') }}">
     {{-- Base Meta Tags --}}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +20,6 @@
     </title>
 
     {{-- IFrame Preloader Removal Workaround --}}
-    <!-- IFrame Preloader Removal Workaround -->
     <style type="text/css">
         body.iframe-mode .preloader {
             display: none !important;
@@ -73,6 +71,10 @@
 
     {{-- Custom Stylesheets (post AdminLTE) --}}
     @yield('adminlte_css')
+
+    @section('adminlte_css_post')
+        <link rel="stylesheet" href="{{ asset('css/aero.css') }}">
+    @show
 
     {{-- Favicon --}}
     @if(config('adminlte.use_ico_only'))

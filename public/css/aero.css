@@ -46,3 +46,19 @@ body {
 .btn-primary:hover {
     opacity: 0.9;
 }
+
+body .page-link {
+    padding: 2px 6px !important;
+    font-size: 0.75rem !important;
+    line-height: 1 !important;
+}
+
+body .page-item {
+    margin: 0 2px !important;
+}
+
+body .pagination {
+    justify-content: center !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button { padding: 2px 6px !important; margin: 0 2px !important; font-size: 0.75rem !important; border-radius: 4px !important; } .dataTables_wrapper .dataTables_paginate .paginate_button.current { background: #007bff !important; color: white !important; border: 1px solid #007bff !important; } .dataTables_wrapper .dataTables_paginate .paginate_button:hover { background: #e9ecef !important; border: 1px solid #ddd !important; } .dataTables_wrapper .dataTables_paginate { margin-top: 10px !important; text-align: center !important; }
