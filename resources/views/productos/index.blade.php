@@ -16,6 +16,7 @@
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Stock</th>
+                <th>Documento</th> 
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -26,6 +27,19 @@
                     <td>{{ $producto->nombre }}</td>
                     <td>{{ $producto->precio }}</td>
                     <td>{{ $producto->stock }}</td>
+
+                    <td>
+                        @if ($producto->documento)
+                            <a href="{{ asset('storage/' . $producto->documento) }}" 
+                               class="btn btn-info btn-sm" 
+                               download>
+                                Descargar PDF
+                            </a>
+                        @else
+                            <span class="text-muted">Sin documento</span>
+                        @endif
+                    </td>
+
                     <td>
                         <a href="{{ route('productos.edit', $producto) }}" class="btn btn-warning btn-sm">Editar</a>
 
@@ -40,3 +54,4 @@
         </tbody>
     </table>
 @stop
+
