@@ -43,15 +43,18 @@
                     <td>
                         <a href="{{ route('productos.edit', $producto) }}" class="btn btn-warning btn-sm">Editar</a>
 
-                        <form action="{{ route('productos.destroy', $producto) }}" method="POST" style="display:inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger btn-sm">Eliminar</button>
-                        </form>
+                        @if(auth()->check() && auth()->user()->role === 'admin')
+                            <form action="{{ route('productos.destroy', $producto) }}" method="POST" style="display:inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que quieres eliminar este producto?')">
+                                    Eliminar
+                                </button>
+                            </form>
+                        @endif
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
 @stop
-

@@ -48,13 +48,15 @@
                         <td>
                             <a href="{{ route('clientes.edit', $cliente) }}" class="btn btn-warning btn-sm">Editar</a>
 
-                            <form action="{{ route('clientes.destroy', $cliente) }}" method="POST" style="display:inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que quieres borrar este cliente?')">
-                                    Borrar
-                                </button>
-                            </form>
+                            @if(auth()->check() && auth()->user()->role === 'admin')
+                                <form action="{{ route('clientes.destroy', $cliente) }}" method="POST" style="display:inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que quieres borrar este cliente?')">
+                                        Borrar
+                                    </button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

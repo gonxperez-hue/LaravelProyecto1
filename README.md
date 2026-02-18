@@ -1,3 +1,16 @@
+# USUARIO ADMIN PARA ENTRAR EN EL PROYECTO
+
+    -El email es admin@admin.com
+    -La contraseña es admin123
+    -Esto te va a redirigir al dashboard donde vas a poder navegar por los módulos del proyecto.
+
+# USUARIO NO ADMIN PARA ENTRAR EN EL PROYECTO
+
+    -Aquí vas a poder comprobar que en el CRUD un usuario no admin no va a poder eliminar 
+    -El email es user@user.com
+    -La contraseña es user123
+    -También te va a redirigir al dashboard
+    
 # Descripción del Proyecto
     -El proyecto es un sistema de gestión que está desarrollado usando Laravel y AdminLTE, incluyendo varios módulos CRUD, esto permite gestionar:
 
