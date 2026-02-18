@@ -10,6 +10,12 @@
     -El email es user@user.com
     -La contraseña es user123
     -También te va a redirigir al dashboard
+
+# CAMBIOS PARA LA SEGUNDA ENTREGA
+
+    -La función de DataTables, asi como la paginación y la inclusión de fotos ha sido añadida al CRUD de clientes.
+    -La función para poder añadir un pdf descriptivo y una función para poder descargarlo se ha añadido al CRUD de productos.
+    -He incluido la pantalla de login para que se ppuede elegir entre entrar con un usuario admin o no admin como se pedía en la entrega, depende de con cual entres la función de eliminar clientes o productos estará o no disponible.
     
 # Descripción del Proyecto
     -El proyecto es un sistema de gestión que está desarrollado usando Laravel y AdminLTE, incluyendo varios módulos CRUD, esto permite gestionar:
